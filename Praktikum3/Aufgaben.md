@@ -12,5 +12,6 @@ Eine pipe ist in der Regel unidrektional. Die Daten werden vom Eigang der pipe (
 Eine named pipe setzt man ein, wenn zwei nicht-verwnadte Prozesse auf die pipe zugreifen sollen. Ein Porzess kann die pipe dann als reader und einer als writer benutzen.
 
 ###5. Fehlermeldungen eines selbstgeschriebenen C-Programms sollen immer auf dem Bildschirm erscheinen, auch wenn die Standardausgabe in eine Datei oder eine Pipe gelenkt wird. Wie erreiche ich das?
-Die Fehlermeldung in `stderr` schreiben (da, wo sie hin gehört) und nicht in die Standardausgabe.
-`fprintf(stderr, "Error Message);`
+Die Fehlermeldung in `stderr` schreiben (da, wo sie hin gehört) und nicht in die Standardausgabe.  
+`fprintf(stderr, "Error Message, strerror(errno));`  
+`perror("Message");`
